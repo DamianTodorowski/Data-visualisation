@@ -123,4 +123,7 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 
+sentence = "study at the university of warmia and mazury in olsztyn"
+letters = sentence.replace(" ", "")[4:39:4]
+print(letters)
 
