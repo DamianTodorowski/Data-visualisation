@@ -118,3 +118,54 @@ a = Polynomial([2, 3, 4])
 b = Polynomial([1, 4, 2, 2])
 print(f'{a}+{b}={a+b}')
 print(f'{a}-({b})={a-b}')
+
+
+
+
+###########W3
+
+
+def dict0(dictionary):
+    for key in dictionary.keys():
+        print(key)
+
+dict = {'a':1, 'b':2, 'c':3, 'd':4}
+dict0(dict)
+
+
+text = "I study at the University of Warmia and Mazury in Olsztyn"
+text = text.replace(" ", "")
+result = text[5:40:4]
+print(result)
+
+def func3(*args):
+    product = 1
+    for arg in args:
+        product *= arg
+    return product / len(args)
+
+print(func3(10,9,2))
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+squares = [x**2 for x in range(1, 16) if x % 2 == 0]
+factorials = [factorial(x) for x in squares]
+
+print(factorials)
+
+def geometric_sequence_element(n, a1=1, q=2):
+    return a1 * q**(n-1)
+
+result = geometric_sequence_element(4, 3, 3)
+print(result)
+# 81
+
+result = geometric_sequence_element(5, 2, 2)
+print(result)
+# 32
+
+
