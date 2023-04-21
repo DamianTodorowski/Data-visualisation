@@ -52,3 +52,8 @@ def nr_tel(**numbers):
         print("{} ma numer: {}".format(key, value))
 
 nr_tel(Damian=888212013)
+
+
+
+kwadraty_parzyste = [x**2 for x in range(2, 51, 2)]
+print(kwadraty_parzyste)
