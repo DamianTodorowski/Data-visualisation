@@ -57,3 +57,49 @@ nr_tel(Damian=888212013)
 
 kwadraty_parzyste = [x**2 for x in range(2, 51, 2)]
 print(kwadraty_parzyste)
+
+
+
+
+def digits_to_text(input_string):
+    digits_map = {
+        '0': 'zero',
+        '1': 'one',
+        '2': 'two',
+        '3': 'three',
+        '4': 'four',
+        '5': 'five',
+        '6': 'six',
+        '7': 'seven',
+        '8': 'eight',
+        '9': 'nine'
+    }
+
+    output = []
+
+    for char in input_string:
+        if char.isdigit():
+            output.append(digits_map[char])
+
+    return ' '.join(output)
+
+   
+   def temperature_converter(value, unit):
+    if unit == 'C':
+        # Convert from Celsius to Fahrenheit and Kelvin
+        fahrenheit = (value * 1.8) + 32
+        kelvin = value + 273.15
+        return f"{value}°C is equal to {fahrenheit}°F and {kelvin} K"
+    elif unit == 'F':
+        # Convert from Fahrenheit to Celsius and Kelvin
+        celsius = (value - 32) / 1.8
+        kelvin = (value + 459.67) * 5/9
+        return f"{value}°F is equal to {celsius}°C and {kelvin} K"
+    elif unit == 'K':
+        # Convert from Kelvin to Celsius and Fahrenheit
+        celsius = value - 273.15
+        fahrenheit = (value * 1.8) - 459.67
+        return f"{value} K is equal to {celsius}°C and {fahrenheit}°F"
+    else:
+        return "Invalid unit. Please use C, F, or K."
+
