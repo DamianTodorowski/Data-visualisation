@@ -102,4 +102,25 @@ def digits_to_text(input_string):
         return f"{value} K is equal to {celsius}°C and {fahrenheit}°F"
     else:
         return "Invalid unit. Please use C, F, or K."
+     
+     
+     
+     >>> temperature_converter(100, 'C')
+'100°C is equal to 212.0°F and 373.15 K'
+>>> temperature_converter(68, 'F')
+'68°F is equal to 20.0°C and 293.15 K'
+>>> temperature_converter(300, 'K')
+'300 K is equal to 26.85°C and 80.33°F'
+>>> temperature_converter(50, 'R')
+'Invalid unit. Please use C, F, or K.'
+
+
+
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
 
