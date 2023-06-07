@@ -30,16 +30,13 @@ plt.show()
 df = pd.read_excel('ceny21.xlsx')
 
 
-# Stwórz słownik mapujący produkty na unikalne markery i kolory
-produkty = df['Rodzaje towarów'].unique()
-markery = ['>','<']  # Przykładowe markery
-kolory = ['red', 'blue', 'green', 'orange', 'purple', 'pink']  # Przykładowe kolory
-mapowanie = dict(zip(produkty, zip(markery, kolory)))
+markers = {'mąka pszenna - za 1kg': 'o', 'kasza jęczmienna - za 0,5kg': 's'}
+colors = {'mąka pszenna - za 1kg': 'red', 'kasza jęczmienna - za 0,5kg': 'blue'}
 
-# Stwórz wykres punktowy dla każdego produktu
-for produkt, dane in df.groupby('Rodzaje towarów'):
-    marker, kolor = mapowanie[produkt]
-    plt.scatter(dane['Rok'], dane['Wartość'], marker=marker, color=kolor, label=produkt)
+# Iteracja po danych i tworzenie wykresu punktowego
+for index, row in df.iterrows():
+    plt.scatter(row['Rok'], row['Wartość'], marker=markers[row['Rodzaje towarów']], color=colors[row['Rodzaje towarów']])
+
 
 # Ustawienia wykresu
 plt.xlabel('Rok')
