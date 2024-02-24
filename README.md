@@ -1,1 +1,2 @@
-# Wizualizacja
+# Data Visualisation
+Excersises in python 
